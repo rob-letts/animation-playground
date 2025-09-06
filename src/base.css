@@ -1,8 +1,87 @@
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
   appearance: none;
+  font: inherit;
+}
+
+html {
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  block-size: 100%;
+  color-scheme: dark light;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  hanging-punctuation: first last;
+  text-rendering: optimizeSpeed;
+}
+
+body {
+  block-size: 100%;
+  min-height: 100svh;
+}
+
+img {
+  object-fit: cover;
+}
+
+a:focus-visible {
+  outline-offset: 0.25em;
+  outline-width: 0.25em;
+  outline-color: currentColor;
+}
+
+:where(ul, ol) {
+  list-style: none;
+}
+
+:where(img, picture, video, iframe, svg) {
+  display: block;
+  max-inline-size: 100%;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}
+
+:where(p, h1, h2, h3, h4, h5, h6, li, dl, dt, blockquote) {
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+:where(p, li, figcaption) {
+  max-inline-size: 65ch;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
+
+   @view-transition {
+    navigation: auto;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
