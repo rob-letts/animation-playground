@@ -37,8 +37,9 @@ const components = [One, Two, Three]
 
 <style>
 :root {
-  --base-color: white;
-  --accent: orange;
+  --base-color: oklch(1 0 225);
+  --dim: oklch(1 0 225 / 50%);
+  --accent: oklch(0.7 0.1529 84.18);
   --transition-duration: 0.2s;
   --transition-timing-function: ease;
 }
@@ -60,11 +61,6 @@ button {
     border-radius: 4px;
   }
 
-  &:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-  }
-
   &.active {
     color: var(--accent);
   }
@@ -77,10 +73,6 @@ button {
 main {
   text-align: center;
   padding: 0.5rem;
-}
-
-section {
-  border: 1px solid var(--accent);
 }
 
 nav {
