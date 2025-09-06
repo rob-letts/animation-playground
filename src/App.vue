@@ -21,18 +21,28 @@ const components = [One, Two, Three]
           :value="index"
           :class="{ active: activeIndex === index }"
         >
-          #{{ index + 1 }}
+          <span class="hash">#</span>{{ index + 1 }}
         </button>
         <span v-if="index !== components.length - 1">
           |
         </span>
       </template>
     </nav>
-    <component :is="components[activeIndex]" />
+
+    <section>
+      <component :is="components[activeIndex]" />
+    </section>
   </main>
 </template>
 
 <style>
+:root {
+  --base-color: white;
+  --accent: orange;
+  --transition-duration: 0.2s;
+  --transition-timing-function: ease;
+}
+
 h2 {
   font-size: 5rem;
 }
@@ -43,9 +53,10 @@ button {
   border: none;
   background: none;
   cursor: pointer;
+  transition: color var(--transition-duration) var(--transition-timing-function);
 
   &:focus-visible {
-    outline: 1px solid white;
+    outline: 1px solid var(--base-color);
     border-radius: 4px;
   }
 
@@ -55,7 +66,11 @@ button {
   }
 
   &.active {
-    color: orange;
+    color: var(--accent);
+  }
+
+  &:not(.active) .hash {
+    opacity: 0.25;
   }
 }
 
@@ -64,11 +79,21 @@ main {
   padding: 0.5rem;
 }
 
+section {
+  border: 1px solid var(--accent);
+}
+
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.hash {
+  transition: opacity var(--transition-duration) var(--transition-timing-function);
+  margin-right: 0.25rem;
+  color: inherit;
 }
 </style>
