@@ -39,13 +39,14 @@ const components = [One, Two, Three]
 :root {
   --base-color: oklch(1 0 225);
   --dim: oklch(1 0 225 / 50%);
-  --accent: oklch(0.7 0.1529 84.18);
+  --accent: oklch(65.4% 0.235 34.0);
   --transition-duration: 0.2s;
   --transition-timing-function: ease;
+  --heading-size: clamp(2.5rem, 5vw + 1rem, 5rem);
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: var(--heading-size);
 }
 
 button {
@@ -72,7 +73,17 @@ button {
 
 main {
   text-align: center;
-  padding: 0.5rem;
+  padding-top: 0.5rem;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+section {
+  margin: 1rem;
+  display: grid;
+  place-items: center;
+  height: 50%;
 }
 
 nav {
