@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 </script>
 
 <template>
-<h2>Two</h2>
+<h2>Animation Playground Two</h2>
 </template>
 
 <style scoped>

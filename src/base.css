@@ -1,3 +1,11 @@
+
+
+@font-face {
+  font-family: 'OTMiniature-Regular';
+  src: url('./assets/OTMiniature-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 *,
 *::before,
 *::after {
@@ -17,7 +25,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   block-size: 100%;
   color-scheme: dark light;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-family: OTMiniature-Regular, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   hanging-punctuation: first last;
   text-rendering: optimizeSpeed;
 }
